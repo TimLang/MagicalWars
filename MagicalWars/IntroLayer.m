@@ -9,8 +9,9 @@
 
 // Import the interfaces
 #import "IntroLayer.h"
-#import "HelloWorldLayer.h"
 
+#import "GameScene.h"
+#import "CCBReader.h"
 
 #pragma mark - IntroLayer
 
@@ -53,6 +54,9 @@
 
 		// add the label as a child to this Layer
 		[self addChild: background];
+        
+        [[CCSpriteFrameCache sharedSpriteFrameCache] addSpriteFramesWithFile:@"Characters.plist"];
+        [[CCSpriteFrameCache sharedSpriteFrameCache] addSpriteFramesWithFile:@"UI.plist"];
 	}
 	
 	return self;
@@ -60,7 +64,9 @@
 
 -(void) onEnter
 {
+   
+
 	[super onEnter];
-	[[CCDirector sharedDirector] replaceScene:[CCTransitionFade transitionWithDuration:1.0 scene:[HelloWorldLayer scene] ]];
+	[[CCDirector sharedDirector] replaceScene:[CCTransitionFade transitionWithDuration:1.0 scene:[GameScene scene]]];
 }
 @end

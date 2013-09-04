@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<map version="1.0" orientation="orthogonal" width="20" height="20" tilewidth="48" tileheight="48">
+ <tileset firstgid="1" name="整合外景" tilewidth="48" tileheight="48">
+  <image source="整合外景.png" width="384" height="240"/>
+  <tile id="0">
+   <properties>
+    <property name="MovementCost" value="1"/>
+    <property name="TileType" value="Grass"/>
+   </properties>
+  </tile>
+  <tile id="4">
+   <properties>
+    <property name="MovementCost" value="100"/>
+    <property name="TileType" value="Balk"/>
+   </properties>
+  </tile>
+  <tile id="16">
+   <properties>
+    <property name="MovementCost" value="2"/>
+    <property name="TileType" value="Tree"/>
+   </properties>
+  </tile>
+  <tile id="17">
+   <properties>
+    <property name="MovementCost" value="2"/>
+    <property name="TileType" value="Tree"/>
+   </properties>
+  </tile>
+  <tile id="18">
+   <properties>
+    <property name="MovementCost" value="2"/>
+    <property name="TileType" value="Tree"/>
+   </properties>
+  </tile>
+  <tile id="25">
+   <properties>
+    <property name="MovementCost" value="2"/>
+    <property name="TileType" value="Tree"/>
+   </properties>
+  </tile>
+  <tile id="31">
+   <properties>
+    <property name="MovementCost" value="100"/>
+    <property name="TileType" value="Balk"/>
+   </properties>
+  </tile>
+ </tileset>
+ <layer name="Background" width="20" height="20">
+  <data encoding="base64" compression="zlib">
+   eJxjZGBgYBzFo3gUj+JRPIpJxADrnAGR
+  </data>
+ </layer>
+ <objectgroup name="Units_P1" width="20" height="20">
+  <object x="241" y="240" width="46" height="48">
+   <properties>
+    <property name="Type" value="Knight"/>
+   </properties>
+  </object>
+  <object x="241" y="290" width="46" height="46">
+   <properties>
+    <property name="Type" value="Fighter"/>
+   </properties>
+  </object>
+  <object x="241" y="336" width="46" height="47">
+   <properties>
+    <property name="Type" value="Wizzard"/>
+   </properties>
+  </object>
+ </objectgroup>
+ <objectgroup name="Units_P2" width="20" height="20">
+  <object x="97" y="241" width="46" height="47">
+   <properties>
+    <property name="Type" value="Enemy"/>
+   </properties>
+  </object>
+  <object x="385" y="241" width="45" height="47">
+   <properties>
+    <property name="Type" value="EnemyQueen"/>
+   </properties>
+  </object>
+  <object x="241" y="483" width="45" height="46">
+   <properties>
+    <property name="Type" value="EnemyKing"/>
+   </properties>
+  </object>
+ </objectgroup>
+ <layer name="Foreground" width="20" height="20">
+  <data encoding="base64" compression="zlib">
+   eJxjYBjZQBCIhYBYmApmKQCxFBKmNlAYROaxQjG1zIOZiQ4oMZMVjaY2oJW5o2AUDBUAALinAUM=
+  </data>
+ </layer>
+</map>

@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model name="" userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="2057" systemVersion="12B19" minimumToolsVersion="Xcode 4.3" macOSVersion="Automatic" iOSVersion="Automatic">
+    <entity name="Article" representedClassName="Article" isAbstract="YES" syncable="YES">
+        <attribute name="articleID" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <attribute name="icon" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="introduction" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="nature" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="option" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="price" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <attribute name="priceRMB" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="state" optional="YES" attributeType="String" syncable="YES"/>
+    </entity>
+    <entity name="Bag" syncable="YES">
+        <attribute name="amount" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="id" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
+        <fetchedProperty name="s" optional="YES" syncable="YES">
+            <fetchRequest name="fetchedPropertyFetchRequest" entity="Bag" predicateString="s"/>
+        </fetchedProperty>
+    </entity>
+    <entity name="EquipChest" representedClassName="EquipChest" parentEntity="Article" syncable="YES">
+        <attribute name="ap" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <attribute name="defend" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <attribute name="evasion" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="hp" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <attribute name="magicDefend" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <attribute name="mp" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <relationship name="hero" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="Hero" inverseName="equipChest" inverseEntity="Hero" syncable="YES"/>
+    </entity>
+    <entity name="EquipFoot" parentEntity="Article" syncable="YES">
+        <attribute name="ap" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <attribute name="defend" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <attribute name="evasion" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="hp" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <attribute name="magicDefend" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="move" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="mp" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <relationship name="hero" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="Hero" inverseName="equipFoot" inverseEntity="Hero" syncable="YES"/>
+    </entity>
+    <entity name="EquipHelmet" representedClassName="EquipHelmet" parentEntity="Article" syncable="YES">
+        <attribute name="ap" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <attribute name="defend" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <attribute name="evasion" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="hp" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <attribute name="magicDefend" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <attribute name="mp" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <relationship name="hero" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="Hero" inverseName="equipHelmet" inverseEntity="Hero" syncable="YES"/>
+    </entity>
+    <entity name="EquipWeapon" representedClassName="EquipWeapon" parentEntity="Article" syncable="YES">
+        <attribute name="accuracy" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="attack" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <attribute name="defend" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <attribute name="magicAttack" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <attribute name="magicDefend" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <relationship name="hero" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="Hero" inverseName="equipWeapon" inverseEntity="Hero" syncable="YES"/>
+    </entity>
+    <entity name="Hero" representedClassName="Hero" syncable="YES">
+        <attribute name="dscpAge" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="dscpIntroduction" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="dscpName" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="dscpRace" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="magicList" optional="YES" attributeType="Integer 16" defaultValueString="0" allowsExternalBinaryDataStorage="YES" syncable="YES"/>
+        <attribute name="profession" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="texture" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="texturePortrait" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="equipChest" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="EquipChest" inverseName="hero" inverseEntity="EquipChest" syncable="YES"/>
+        <relationship name="equipFoot" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="EquipFoot" inverseName="hero" inverseEntity="EquipFoot" syncable="YES"/>
+        <relationship name="equipHelmet" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="EquipHelmet" inverseName="hero" inverseEntity="EquipHelmet" syncable="YES"/>
+        <relationship name="equipWeapon" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="EquipWeapon" inverseName="hero" inverseEntity="EquipWeapon" syncable="YES"/>
+        <relationship name="team" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="Team" inverseName="hero" inverseEntity="Team" syncable="YES"/>
+    </entity>
+    <entity name="KungFu" syncable="YES">
+        <attribute name="buffItem" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="buffPoint" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="consume" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="damage" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <attribute name="damagePreTurn" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <attribute name="id" optional="YES" attributeType="Integer 16" defaultValueString="0" indexed="YES" syncable="YES"/>
+        <attribute name="introduction" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="rangeEffect" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="rangePossible" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="turns" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="type" optional="YES" attributeType="String" syncable="YES"/>
+    </entity>
+    <entity name="Magic" syncable="YES">
+        <attribute name="buffItem" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="buffPoint" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="consume" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="damage" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <attribute name="damagePreTurn" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <attribute name="id" optional="YES" attributeType="Integer 16" defaultValueString="0" indexed="YES" syncable="YES"/>
+        <attribute name="introduction" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="rangeEffect" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="rangePossible" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="turns" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="type" optional="YES" attributeType="String" syncable="YES"/>
+    </entity>
+    <entity name="Sundries" parentEntity="Article" syncable="YES">
+        <attribute name="apRate" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="apValue" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <attribute name="damage" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <attribute name="effectArguType" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="effectArguValue" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="hpRate" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="hpValue" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <attribute name="mpRate" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="mpValue" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <attribute name="range" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+    </entity>
+    <entity name="Team" syncable="YES">
+        <attribute name="team" optional="YES" syncable="YES"/>
+        <attribute name="teamID" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <relationship name="hero" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="Hero" inverseName="team" inverseEntity="Hero" syncable="YES"/>
+    </entity>
+    <elements>
+        <element name="Article" positionX="250" positionY="117" width="128" height="178"/>
+        <element name="Bag" positionX="90" positionY="117" width="128" height="119"/>
+        <element name="EquipChest" positionX="225" positionY="360" width="128" height="150"/>
+        <element name="EquipFoot" positionX="358" positionY="360" width="128" height="165"/>
+        <element name="EquipHelmet" positionX="52" positionY="252" width="128" height="150"/>
+        <element name="EquipWeapon" positionX="655" positionY="351" width="128" height="135"/>
+        <element name="Hero" positionX="-180" positionY="-108" width="128" height="240"/>
+        <element name="KungFu" positionX="-189" positionY="162" width="128" height="223"/>
+        <element name="Magic" positionX="-324" positionY="198" width="128" height="223"/>
+        <element name="Sundries" positionX="504" positionY="333" width="128" height="195"/>
+        <element name="Team" positionX="126" positionY="-63" width="128" height="90"/>
+    </elements>
+</model>
